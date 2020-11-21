@@ -1,0 +1,58 @@
+{
+  "name": "react-hot-docs",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": ".",
+  "dependencies": {
+    "@babel/standalone": "^7.12.6",
+    "brace": "^0.11.1",
+    "docblock-parser": "^1.0.0",
+    "docstring": "^1.1.0",
+    "faker": "^5.1.0",
+    "jsdoc-parse": "^5.0.0",
+    "jsx-runtime": "^1.2.0",
+    "raw-loader": "^4.0.2",
+    "react": "^17.0.1",
+    "react-ace": "^9.2.0",
+    "react-ast": "^0.1.30",
+    "react-dom": "^17.0.1",
+    "react-hot-loader": "^4.13.0",
+    "react-jsx-parser": "^1.27.0",
+    "react-scripts": "4.0.0",
+    "react-source-render": "^4.0.0-1",
+    "react-static": "^7.4.2",
+    "react-view": "^2.3.2",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.1",
+    "semanticui-react": "^0.2.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "dev": "NODE_ENV=development&react-scripts start",
+    "build": "react-scripts --max-old-space-size=4096 build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0"
+  },
+  "devDependencies": {
+    "@babel/generator": "^7.12.5"
+  }
+}

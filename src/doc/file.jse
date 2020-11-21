@@ -1,0 +1,25 @@
+/**
+ * description go here
+ * @author nik sumikawa
+ * @date decsomething
+ * @type dev...
+ */
+
+import React from 'react';
+
+// does this comment show up??
+import { Button } from "semantic-ui-react"
+
+const Example = () => (
+
+  <div>
+    <h4>
+      This should have documentation
+    </h4>
+
+    <Button> Press Me </Button>
+  </div>
+
+)
+
+export default Example

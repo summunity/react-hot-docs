@@ -1,0 +1,11 @@
+{
+  "directory": "../doc/",
+  "examples": [
+    {
+      "title": "Example 1",
+      "description": "This is a description file",
+      "path": "file.jse"
+    }
+  ]
+
+}
