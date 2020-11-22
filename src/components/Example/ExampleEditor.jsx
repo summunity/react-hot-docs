@@ -64,13 +64,10 @@ export default class ExampleEditor extends Component {
           onClick={() => this.setState({showCode: !this.state.showCode})}
           />
 
-        <Segment
+        <Segment vertical
           basic
           attached="top"
-          style={{
-            background: "rgb(255, 255, 255)",
-            boxShadow: "rgb(204, 204, 204) 0px 1px 2px",
-          }}
+
         >
         <SourceRender
           resolver={resolver}

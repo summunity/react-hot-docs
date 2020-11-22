@@ -1,16 +1,13 @@
 
 import React, { createElement } from 'react'
 
-// import CodeEditor from './components/CodeEditor/CodeEditor'
-import FileRead from './components/FileRead/FileRead'
-import SimpleExample from './components/FileRead/SimpleExample'
-// import Sandbox from './components/ReactSourceRender/Example'
 
-import Example from './components/Example'
+import Page from './components/Page'
+
 
 export default function App() {
 
-  const config = require('./config.json')
+  const config = require('./config.json').examples
 
   console.log('this is the config', config)
 
@@ -25,11 +22,8 @@ export default function App() {
   // <FileRead />
   return (
     <div>
-      hello
-      <Example
-        path = {config.directory}
-        info = {config.examples[0]}
-        />
+      <Page config={config} />
+
 
     </div>
 

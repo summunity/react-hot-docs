@@ -15,8 +15,16 @@ export default function CodeEditor( props ){
 
   // do not render the component when the visiblility flag
   // is set to false
-  if( props.visible === false ) return null
+  if( props.visible === false ){
+    return(
+      <Segment
+        attached="bottom"
+        style={{ padding: 0 }}
+        />
 
+      )
+  }
+  
   return(
     <Segment
       attached="bottom"

@@ -1,6 +1,7 @@
 
 import React, {useState} from 'react'
 
+import { Segment } from "semantic-ui-react"
 
 
 import ExampleEditor from './ExampleEditor'
@@ -92,13 +93,13 @@ export default function Example( props ) {
 
   return (
 
-    <div>
+    <Segment vertical>
       <ExampleEditor
         {...props}
         source={textState}
         />
 
-    </div>
+    </Segment>
 
   );
 }

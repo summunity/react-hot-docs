@@ -10,21 +10,16 @@
     "docstring": "^1.1.0",
     "faker": "^5.1.0",
     "jsdoc-parse": "^5.0.0",
-    "jsx-runtime": "^1.2.0",
-    "raw-loader": "^4.0.2",
     "react": "^17.0.1",
     "react-ace": "^9.2.0",
-    "react-ast": "^0.1.30",
     "react-dom": "^17.0.1",
     "react-hot-loader": "^4.13.0",
-    "react-jsx-parser": "^1.27.0",
     "react-scripts": "4.0.0",
     "react-source-render": "^4.0.0-1",
     "react-static": "^7.4.2",
     "react-view": "^2.3.2",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.0.1",
-    "semanticui-react": "^0.2.3"
+    "semantic-ui-react": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
