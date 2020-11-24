@@ -21,6 +21,7 @@ export default function Menu( props ){
     const cat = props.categories[i]
     menuArray.push(
       <SuiMenu.Item
+        key={`ExampleComponent-${i}`}
         name= {cat}
         active={props.category === cat}
         onClick={() => props.setCategory(cat)}

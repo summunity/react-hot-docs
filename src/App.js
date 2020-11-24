@@ -1,39 +1,25 @@
+import logo from './logo.svg';
+import './App.css';
 
-import React, { createElement } from 'react'
-
-
-import Page from './components/Page'
-
-
-export default function App() {
-
-  const config = require('./config.json').examples
-
-  console.log('this is the config', config)
-
-  var path_module = require('path');
-  console.log( 'depth', path_module.resolve(__dirname, 'bin') )
-
-  // // const sourceCode = (<div> this is a work in progress</div>)
-  // const sourceCode = require('./components/example.js').default
-  // console.log( 'source code', createElement(sourceCode) )
-  // {sourceCode}
-  // <ExampleEditor />
-  // <FileRead />
+function App() {
   return (
-    <div>
-      <Page config={config} />
-
-
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
-
   );
 }
 
-
-// <Example
-//   jse = {'./components/doc/file.jse'}/>
-
-// <CodeEditor
-//   onChange={(value) => console.log( value )}
-//   value={'hello'} />
+export default App;

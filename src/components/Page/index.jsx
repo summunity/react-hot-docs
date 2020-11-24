@@ -35,6 +35,7 @@ export default function Page( props ){
   for( var i=0; i < page.length; i++ ){
     pageContent.push(
       <Example
+        {...props}
         key = {`example-${i}`}
         info = {page[i]} />
     )

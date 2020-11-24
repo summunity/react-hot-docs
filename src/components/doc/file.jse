@@ -7,8 +7,6 @@
 
 import React from 'react';
 
-// does this comment show up??
-import { Button } from "semantic-ui-react"
 
 const Example = () => (
 
@@ -17,7 +15,6 @@ const Example = () => (
       This should have documentation
     </h4>
 
-    <Button> Press Me </Button>
   </div>
 
 )

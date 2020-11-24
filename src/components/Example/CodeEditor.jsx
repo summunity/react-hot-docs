@@ -8,7 +8,8 @@
 import React, { Component, Fragment } from "react"
 
 import { Segment } from "semantic-ui-react"
-import Editor from "./Editor"
+import AceEditor from "react-ace"
+// import Editor from "./Editor"
 
 
 export default function CodeEditor( props ){
@@ -24,14 +25,19 @@ export default function CodeEditor( props ){
 
       )
   }
-  
+
+  require("brace/mode/html")
+  require("brace/mode/jsx")
+  require("brace/mode/sh")
+  require("brace/theme/github")
+
   return(
     <Segment
       attached="bottom"
       style={{ padding: 0 }}
       >
 
-      <Editor
+      <AceEditor
         editorProps={{ $blockScrolling: Infinity }}
         maxLines={Infinity}
         minLines={10}
@@ -43,6 +49,7 @@ export default function CodeEditor( props ){
         value={props.source}
         width="100%"
       />
+
 
 
     </Segment>

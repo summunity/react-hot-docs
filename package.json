@@ -1,35 +1,48 @@
 {
-  "name": "react-hot-docs",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": ".",
-  "dependencies": {
-    "@babel/standalone": "^7.12.6",
+  "name": "@nsumikawa/react_hot_docs",
+  "version": "0.1.1",
+  "description": "React documentation framework for rendering the component and code together",
+  "author": "Nik Sumikawa",
+  "license": "MIT",
+  "bugs": {
+      "url": "https://github.com/summunity/react-hot-docs/issues"
+  },
+  "homepage": "https://github.com/summunity/react-hot-docs",
+  "main": "build/index.js",
+  "mode": "production",
+  "peerDependencies": {
+    "@babel/standalone": "^7.12.8",
     "brace": "^0.11.1",
-    "docblock-parser": "^1.0.0",
-    "docstring": "^1.1.0",
-    "faker": "^5.1.0",
-    "jsdoc-parse": "^5.0.0",
     "react": "^17.0.1",
     "react-ace": "^9.2.0",
-    "react-dom": "^17.0.1",
-    "react-hot-loader": "^4.13.0",
-    "react-scripts": "4.0.0",
     "react-source-render": "^4.0.0-1",
-    "react-static": "^7.4.2",
-    "react-view": "^2.3.2",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.1"
   },
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.1",
+    "@testing-library/user-event": "^12.2.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.0",
+    "web-vitals": "^0.2.4",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.2.0"
+  },
   "scripts": {
     "start": "react-scripts start",
-    "dev": "NODE_ENV=development&react-scripts start",
-    "build": "react-scripts --max-old-space-size=4096 build",
+    "build": "webpack",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -43,11 +56,22 @@
       "last 1 safari version"
     ]
   },
-  "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0"
-  },
-  "devDependencies": {
-    "@babel/generator": "^7.12.5"
+  "dependencies": {
+    "@babel/standalone": "^7.12.8",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.1",
+    "@testing-library/user-event": "^12.2.2",
+    "babel-preset-env": "^1.7.0",
+    "brace": "^0.11.1",
+    "fs": "0.0.1-security",
+    "raw-loader": "^4.0.2",
+    "react": "^17.0.1",
+    "react-ace": "^9.2.0",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.0",
+    "react-source-render": "^4.0.0-1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.1",
+    "web-vitals": "^0.2.4"
   }
 }

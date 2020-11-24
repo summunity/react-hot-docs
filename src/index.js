@@ -1,22 +1,59 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import './index.css';
 import App from './App';
-// import * as serviceWorker from './serviceWorker';
+import reportWebVitals from './reportWebVitals';
 
-// import './style.css'
-// import "bootstrap/dist/css/bootstrap.css";
-// import 'semantic-ui-css/semantic.min.css'
-// import "assets/scss/now-ui-dashboard.scss?v1.2.0";
-// import "assets/css/demo.css";
-// import 'font-awesome/css/font-awesome.min.css';
+import Component from './component.js'
 
-import 'semantic-ui-css/semantic.min.css'
+import SourceRender from "react-source-render"
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import * as REACT from 'react'
+import * as SUIR from 'semantic-ui-react'
+const imports = {
+    'react': REACT,
+    'semantic-ui-react': SUIR,
+  }
+  
+const config = require('./config.json').examples
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-// serviceWorker.unregister();
+ReactDOM.render(
+  <React.StrictMode>
+    <Component
+      path={'./App'}
+      SourceRender={SourceRender}
+      config={config}
+      resolver = {(path) => imports[path]}
+      import={(val) => import(`${val}`)}/>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+//
+// class Dynamic extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = { module: null };
+//   }
+//   componentDidMount() {
+//     const { path } = this.props;
+//     import(`${path}`)
+//       .then(module => this.setState({ module: module.default }))
+//   }
+//   render() {
+//     const { module: Component } = this.state; // Assigning to new variable names @see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+//     return(
+//       <div>
+//         {Component && <Component />}
+//       </div>
+//     )
+//   }
+// }
+// ReactDOM.render(<Dynamic path='./component' />, document.getElementById('root'));

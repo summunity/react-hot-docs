@@ -3,9 +3,11 @@ import React, {useState} from 'react'
 
 import { Segment } from "semantic-ui-react"
 
+import CodeEditor from './CodeEditor'
+import Controls from "./Controls"
 
-import ExampleEditor from './ExampleEditor'
 
+import SourceRender from "react-source-render"
 
 /**
  * Reads the text contents of the file in two steps. First the compiled
@@ -16,90 +18,54 @@ import ExampleEditor from './ExampleEditor'
  */
 export default function Example( props ) {
 
-  const [textState, setTextState] = useState()
-  const [element, setElement] = useState()
-  //
-  //
-  // try{
-  //   const dir = '../doc/'
-  //   const file = 'file.jse'
-  //   const full = 'doc/file.jse'
-  //   var path_module = require('path');
-  //   console.log( __filename )
-  //   console.log( __dirname )
-  //   console.log( '??', path_module.relative(__dirname, 'doc/file.jse') )
-  //
-  //   // const directory = [props.path] + '/' + [props.info.path]
-  //   // const directory = [props.path] + '/' + [props.info.path]
-  //   // console.log( dir + file )
-  //   // console.log( path_module )
-  //   console.log( require('doc/'+ [file]) )
-  //   // console.log( require( 'doc/' + [file] ) )
-  // }catch{console.log( 'failed')}
-  //
+  const [module, setModule] = React.useState()
+  const [source, setSource] = useState()
+  const [showCode, setShowCode] = useState(false)
 
-  const txtFile = require('doc/file.jse').default;
-
-  if( textState === undefined ){
-    fetch(txtFile)
+  props.import(`${props.info.path}`)
+    .then(module => setModule(module.default))
+  // const txtFile = require('../doc/file.jse').default;
+  //
+  if( (module !== undefined)&(source === undefined) ){
+    fetch(module)
     .then((r) => r.text())
     .then(text  => {
       // console.log('this is the code', text);
-      setTextState(text)
+      setSource(text)
     })
 
   }
 
-  // if( textState !== undefined ){
-  //   const regesx = new RegExp( '[^:](\/\/.+)|(\/\*[\W\w\n\r]+?\*\/)' )
-  //   // console.log( textState.match(regesx) )
-  //   var docblockParser = require("docblock-parser")
-  //
-  //   var docstring = [
-  //     '/**',
-  //     ' * Some free text',
-  //     ' *',
-  //     ' * @public',
-  //     ' * @extends',
-  //     ' * SuperLongClassName',
-  //     ' * @multiline-example',
-  //     ' * E.g. for example code',
-  //     ' *',
-  //     ' *     var foo = bar;',
-  //     ' *',
-  //     ' * With description.',
-  //     ' *',
-  //     ' * @param {string} foo',
-  //     ' * @param {number} bar',
-  //     ' * @returns {boolean} Some desciption',
-  //     ' */',
-  //   ].join('\n');
-  //
-  //   // config.text and config.default is provided through the default config
-  //   var result = docblockParser({
-  //     tags: {
-  //       public: docblockParser.booleanTag,
-  //       extends: docblockParser.singleParameterTag,
-  //       'multiline-example': docblockParser.multilineTilTag,
-  //       param: docblockParser.multilineTilTag,
-  //       returns: docblockParser.multilineTilTag,
-  //     }
-  //   }).parse(textState);
-  //
-  //
-  //   console.log(result)
-  // }
-  // console.log( textState)
+  if( source === undefined ) return null
 
   return (
 
     <Segment vertical>
-      <ExampleEditor
+
+      <Controls
         {...props}
-        source={textState}
+        onClick={() => setShowCode(!showCode)}
+        />
+
+      <div style={{padding:'10px'}}>
+        <SourceRender
+          resolver={props.resolver}
+          source={source}
+          />
+      </div>
+
+      <CodeEditor
+        source={source}
+        visible={showCode}
+        onChange={(val) => setSource(val)}
         />
 
     </Segment>
 
   );
 }
+// <Controls
+//   {...props}
+//   onClick={() => setShowCode(!showCode)}
+//   />
+//

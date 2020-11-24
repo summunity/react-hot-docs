@@ -5,19 +5,19 @@
       "title": "Example 1",
       "page": "example",
       "description": "This is a description file",
-      "path": "file.jse"
+      "path": "./components/doc/file.jse"
     },
     {
       "title": "Example 2",
       "page": "example",
       "description": "This is a description file2",
-      "path": "file.jse"
+      "path": "./components/doc/file.jse"
     },
     {
       "title": "TestExample",
       "page": "Test",
       "description": "This is description of Test",
-      "path": "file.jse"
+      "path": "./components/doc/file.jse"
     }
   ]
 
